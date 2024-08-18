@@ -15,15 +15,18 @@ const id = ref(Number(route.query.id) * 1)
 import { useIllustrationsStore } from '@/stores/illustrations'
 const store = useIllustrationsStore()
 store.increment(id.value - 1)
+
+const caption = ref(store.getDetails.caption)
+const length = ref(store.items?.length)
+const description = ref(store.getDetails.description)
 </script>
 
 <template>
   <DetailView
     :id="id"
-    :caption="store.getDetails.caption"
-    :length="store.items.length"
-    :description="store.getDetails.description"
-    :store="store"
+    :caption="caption"
+    :length="length"
+    :description="description"
     path="/src/assets/images/illustration/illustration"
     to_parent="/illustration"
     name="Illustration"

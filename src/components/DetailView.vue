@@ -6,9 +6,9 @@ import Backbutton from '@/components/BackButton.vue'
 import { ref } from 'vue'
 
 const props = defineProps({
-  id: Proxy,
+  id: Number,
   caption: String,
-  length: Number,
+  length: { type: Number, default: 0 },
   description: String,
   path: String,
   to_parent: String,
@@ -16,18 +16,14 @@ const props = defineProps({
 })
 
 const height = ref(0)
-const loadImage = (e: Event) => {
-  height.value = e.target.height
+const loadImage = (e: any) => {
+  height.value = e?.target?.height
 }
 </script>
 
 <template>
   <div id="DetailView" :name="name">
     <Backbutton :to_parent="to_parent" />
-
-    <!-- <Transition name="fade" mode="out-in">
-      <h1 :key="Number(id)">{{ name }}</h1>
-    </Transition> -->
 
     <div class="bg-gray" :style="`height:${height}px`">
       <Transition name="drop" mode="out-in">
@@ -48,7 +44,7 @@ const loadImage = (e: Event) => {
 
     <div class="text">
       <Transition name="fade" mode="out-in">
-        <h2 :key>{{ caption }}</h2>
+        <h2 :key="Number(id)">{{ caption }}</h2>
       </Transition>
 
       <Transition name="fade" mode="out-in">

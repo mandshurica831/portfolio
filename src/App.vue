@@ -6,7 +6,7 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 const route = useRoute()
 
 //header
-import Title from '~icons/svg/title'
+import Title from './components/TitleSVG.vue'
 
 //nav
 import NavButton from './components/NavButton.vue'
@@ -20,8 +20,8 @@ const NavItems = ref([
 const isTitleAnimationEnd = ref(false)
 const isHeaderTransitionEnd = ref(false)
 
-const transitionStartChk = (e: Event) => {
-  if (e.target.tagName == 'path') return
+const transitionStartChk = (e: any) => {
+  if (e?.target?.tagName == 'path') return
   isHeaderTransitionEnd.value = false
 }
 </script>
