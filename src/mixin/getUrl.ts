@@ -1,3 +1,4 @@
 export function getUrl(path: string) {
-  return new URL(path, import.meta.url).href
+  console.log()
+  return new URL(`${import.meta.env.BASE_URL}/` + path, import.meta.url).href
 }
