@@ -12,7 +12,7 @@ const list = store.items
     <ul class="bg-gray">
       <li v-for="(item, index) in list" :key="item.caption">
         <RouterLink :to="'illustration/detail?id=' + (index + 1)">
-          <img :src="getUrl(`/src/assets/images/thumb/illustration-${index + 1}.png`)" />
+          <img :src="getUrl(`/images/thumb/illustration-${index + 1}.png`)" />
         </RouterLink>
       </li>
     </ul>

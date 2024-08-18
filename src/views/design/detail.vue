@@ -27,7 +27,7 @@ const description = ref(store.getDetails.description)
     :caption="caption"
     :length="length"
     :description="description"
-    path="/public/images/design/design"
+    path="/images/design/Design"
     to_parent="/design"
     name="Design"
   />
