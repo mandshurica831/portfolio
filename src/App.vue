@@ -11,8 +11,8 @@ import Title from './components/TitleSVG.vue'
 //nav
 import NavButton from './components/NavButton.vue'
 const NavItems = ref([
-  { name: 'Illustration', to: '/illustration' },
   { name: 'Design', to: '/design' },
+  { name: 'Illustration', to: '/illustration' },
   { name: 'Frontend', to: '/frontend' }
 ])
 
@@ -111,7 +111,7 @@ section {
 header {
   position: relative;
   background: var(--color-main);
-  height: 80vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -168,13 +168,15 @@ header.short {
 
 nav {
   position: absolute;
-  bottom: 0;
+  bottom: 10vh;
   width: 100vw;
   font-size: 12px;
   margin-top: -6em;
   z-index: 2;
+  transition: all 400ms var(--ease-default);
   &.short {
     position: fixed;
+    bottom: 0;
     li {
       margin: 0;
     }
@@ -218,6 +220,9 @@ nav a.router-link-exact-active:hover {
 @media (max-width: 840px) {
   #title {
     width: 300px;
+  }
+  header {
+    height: 80vh;
   }
 }
 </style>

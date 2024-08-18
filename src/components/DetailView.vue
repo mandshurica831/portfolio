@@ -57,6 +57,7 @@ const loadImage = (e: any) => {
 <style lang="scss" scoped>
 #DetailView {
   padding-top: 0;
+  padding-bottom: 0;
 }
 .drop-enter-active {
   transition: all 1.5s var(--ease-default);
@@ -118,7 +119,6 @@ const loadImage = (e: any) => {
     margin: 0;
     flex-grow: 1;
     width: 100%;
-    min-height: 8em;
     font-size: smaller;
   }
 }

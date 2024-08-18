@@ -6,7 +6,6 @@ const props = defineProps({
 </script>
 <template>
   <div class="navButton" :style="`animation-delay:${delay}ms;`">
-    <!-- <img width="280" height="148" :src="name" /> -->
     <p class="label">{{ name }}</p>
   </div>
 </template>
@@ -59,7 +58,8 @@ p {
 }
 @media (max-width: 840px) {
   .navButton {
-    width: 140px;
+    width: 120px;
+    margin: -5px;
   }
 }
 </style>
