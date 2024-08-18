@@ -1,0 +1,49 @@
+@import './base.scss';
+
+#title g {
+  fill: transparent;
+  animation: 0.9s 0.7s fill-animation forwards cubic-bezier(0.55, 0.005, 0.31, 0.99);
+
+  > path {
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-linecap: round;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: 2s 0.65s line-animation forwards cubic-bezier(0.55, 0.005, 0.31, 0.99);
+    transition: fill 200ms ease-in-out;
+  }
+}
+
+#title {
+  &:hover g path {
+    fill: transparent;
+  }
+}
+
+.bg-gray {
+  padding: 1em 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f8f8f8;
+    z-index: -1;
+  }
+  &::before {
+    transform: scaleX(200%);
+  }
+  &::after {
+    transform: scaleX(200%);
+  }
+}

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap');
+
+:root {
+  --color-text: #6a6a6a;
+  --color-text-white: #fff;
+
+  --color-main: #ffd165;
+  --color-sub: #f19249;
+  --color-base: #695d5d;
+  --color-base-middle: #c8c2c2;
+  --color-base-middle-light: #cdc6b9;
+  --color-base-light: #f0f0f0;
+
+  --up-size: -15px;
+  --ease-header-first: cubic-bezier(0.61, 1, 0.88, 1);
+  --ease-default: cubic-bezier(0, 0.55, 0.45, 1);
+  --ease-OutCirc: cubic-bezier(0, 0.56, 0.01, 0.98);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+body::-webkit-scrollbar-thumb {
+  --bg-opacity: 1;
+  background-color: #e5e4db;
+}
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 100vh;
+  color: var(--color-text);
+  transition: color 0.5s;
+  line-height: 1.6;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin-bottom: 2em;
+  font-weight: 700;
+  font-size: 24px;
+  position: relative;
+}
+p {
+  margin: 1em;
+}
+ul {
+  padding: 0;
+  display: flex;
+  li {
+    list-style: none;
+    margin: auto;
+  }
+}
+
+img {
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0;
+}
