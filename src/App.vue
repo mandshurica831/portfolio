@@ -94,7 +94,7 @@ section {
 }
 .header-wrap {
   width: 100vw;
-  height: 80vh;
+  height: 75vh;
   margin-bottom: 20vh;
   position: relative;
   display: flex;
@@ -111,7 +111,7 @@ section {
 header {
   position: relative;
   background: var(--color-main);
-  height: 70vh;
+  height: 75vh;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -222,7 +222,7 @@ nav a.router-link-exact-active:hover {
     width: 300px;
   }
   header {
-    height: 80vh;
+    height: 75vh;
   }
 }
 </style>
