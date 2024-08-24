@@ -21,7 +21,7 @@ const isTitleAnimationEnd = ref(false)
 const isHeaderTransitionEnd = ref(false)
 
 const transitionStartChk = (e: any) => {
-  if (e?.target?.tagName == 'path') return
+  if (e?.target?.tagName != 'header') return
   isHeaderTransitionEnd.value = false
 }
 </script>
@@ -107,6 +107,7 @@ section {
 .header-inner-wrap {
   position: relative;
   margin-bottom: 5vh;
+  width: 500px;
 }
 header {
   position: relative;
@@ -150,8 +151,13 @@ header.short {
   font-weight: 700;
   letter-spacing: 0.15em;
   color: transparent;
-  animation: 0.6s 1.2s show-up forwards var(--ease-default);
   line-height: 1em;
+  display: inline-block;
+  transition: all 300ms var(--ease-default);
+  animation: 0.6s 1.2s show-up forwards var(--ease-default);
+  &:hover{
+    text-shadow: 2px 2px 0px #ffc65c,-2px 2px 0px #ffc65c,-2px -2px 0px #ffc65c,2px -2px 0px #ffc65c;
+  }
 }
 .short {
   .sub_title {
@@ -161,7 +167,8 @@ header.short {
   .name {
     margin-top: 0;
   }
-  #title {
+  #title,
+  .header-inner-wrap {
     width: 300px;
   }
 }
@@ -218,7 +225,8 @@ nav a.router-link-exact-active:hover {
 }
 
 @media (max-width: 840px) {
-  #title {
+  #title,
+  .header-inner-wrap{
     width: 300px;
   }
   header {
