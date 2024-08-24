@@ -14,6 +14,10 @@ export const useDesignsStore = defineStore('designs', () => {
     {
       caption: 'UIデザイン②',
       description: '制作ソフト： Adobe Photoshop, Adobe Illustrator ／制作時間：2~10時間'
+    },
+    {
+      caption: '通販サイト画像',
+      description: '制作ソフト： Adobe Photoshop, Adobe Illustrator ／制作時間：2~10時間'
     }
   ]
   const caption = ref('')

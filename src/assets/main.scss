@@ -21,7 +21,6 @@
     fill: transparent;
   }
 }
-
 .bg-gray {
   padding: 1em 0;
   position: relative;
@@ -46,4 +45,7 @@
   &::after {
     transform: scaleX(200%);
   }
+}
+ul.bg-gray{
+  justify-content: flex-start;
 }
