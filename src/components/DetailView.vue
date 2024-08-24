@@ -19,6 +19,10 @@ const height = ref(0)
 const loadImage = (e: any) => {
   height.value = e?.target?.height
 }
+
+const imgClick = (e: any) => {
+  window.open(e.target.src)
+ }
 </script>
 
 <template>
@@ -32,7 +36,7 @@ const loadImage = (e: any) => {
         </RouterLink>
       </Transition>
       <Transition name="fade" mode="out-in">
-        <img :key="Number(id)" :src="getUrl(`${path}-${Number(id)}.png`)" @load="loadImage" />
+        <img @click="imgClick" :key="Number(id)" :src="getUrl(`${path}-${Number(id)}.png`)" @load="loadImage" />
       </Transition>
 
       <Transition name="drop" mode="out-in">
