@@ -7,6 +7,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import Icons from 'unplugin-icons/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
+import { resolve } from 'path'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: 'portfolio',
@@ -23,5 +25,13 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        404: resolve(__dirname, '404.html'),
+      },
+    },
+  },
 })
