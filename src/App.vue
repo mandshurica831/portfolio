@@ -6,7 +6,7 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 const route = useRoute()
 
 //header
-import Title from './components/TitleSVG.vue'
+import Header from './components/Header.vue'
 
 //nav
 import NavButton from './components/NavButton.vue'
@@ -17,33 +17,22 @@ const NavItems = ref([
 ])
 
 //animation controll
-const isTitleAnimationEnd = ref(false)
 const isHeaderTransitionEnd = ref(false)
+const isTitleAnimationEnd = ref(false)
 
-const transitionStartChk = (e: any) => {
-  if (e?.target?.tagName != 'header') return
-  isHeaderTransitionEnd.value = false
+const headerAnimationEnd = (e:any) =>{
+  if (e?.target?.tagName != 'g') return
+  isTitleAnimationEnd.value = true;
+}
+const headerTransitionEnd = (e:any) =>{
+  if (e?.target?.tagName != 'svg') return
+  isHeaderTransitionEnd.value = true
 }
 </script>
 
 <template>
   <div :class="isTitleAnimationEnd ? '' : 'first'">
-    <wrap class="header-wrap" :class="route.path === '/' ? '' : ' short'">
-      <header
-        :class="route.path === '/' ? '' : 'short'"
-        @transitionstart="transitionStartChk"
-        @transitionend="isHeaderTransitionEnd = true"
-      >
-        <wrap class="header-inner-wrap">
-          <RouterLink to="/">
-            <Title id="title" width="300" height="40" @animationend="isTitleAnimationEnd = true" />
-          </RouterLink>
-          <RouterLink to="/profile">
-            <p class="sub_title">RIE TANAKA</p>
-          </RouterLink>
-        </wrap>
-      </header>
-    </wrap>
+    <Header @animation-end="headerAnimationEnd" @transition-end="headerTransitionEnd" />
 
     <nav v-if="isTitleAnimationEnd" :class="route.path === '/' ? '' : 'short'">
       <ul>
@@ -92,87 +81,6 @@ section {
   max-width: 1024px;
   margin: 0 auto 0;
 }
-.header-wrap {
-  width: 100vw;
-  height: 75vh;
-  margin-bottom: 20vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  &.short {
-    height: 80px;
-    margin-bottom: 0;
-  }
-}
-.header-inner-wrap {
-  position: relative;
-  margin-bottom: 5vh;
-  width: 500px;
-}
-header {
-  position: relative;
-  background: var(--color-main);
-  height: 75vh;
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  place-items: center;
-  justify-content: center;
-  transition: height 700ms var(--ease-OutCirc);
-  z-index: 2;
-}
-header.short {
-  height: 80px;
-  position: fixed;
-  .header-inner-wrap {
-    margin-bottom: 0;
-  }
-}
-.first .header-inner-wrap > a {
-  cursor: default;
-}
-.first header {
-  animation: 1s 0s header-animation 1 var(--ease-header-first);
-}
-.first header.short {
-  animation: 1s 0s header-animation-short 1 var(--ease-header-first);
-}
-#title {
-  bottom: var(--up-size);
-  position: relative;
-  animation: 0.6s 1s up forwards var(--ease-default);
-  width: 500px;
-  transition: 500ms width var(--ease-OutCirc);
-}
-.sub_title {
-  bottom: var(--up-size);
-  position: relative;
-  margin-top: 0.5em;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: transparent;
-  line-height: 1em;
-  display: inline-block;
-  transition: all 300ms var(--ease-default);
-  animation: 0.6s 1.2s show-up forwards var(--ease-default);
-  &:hover{
-    text-shadow: 2px 2px 0px #ffc65c,-2px 2px 0px #ffc65c,-2px -2px 0px #ffc65c,2px -2px 0px #ffc65c;
-  }
-}
-.short {
-  .sub_title {
-    margin-top: 0;
-    line-height: 0.5em;
-  }
-  .name {
-    margin-top: 0;
-  }
-  #title,
-  .header-inner-wrap {
-    width: 300px;
-  }
-}
-
 nav {
   position: absolute;
   bottom: 10vh;
@@ -224,13 +132,4 @@ nav a.router-link-exact-active:hover {
   background: no-repeat top center url('@/assets/images/NavButton-Frontend.png');
 }
 
-@media (max-width: 840px) {
-  #title,
-  .header-inner-wrap{
-    width: 300px;
-  }
-  header {
-    height: 75vh;
-  }
-}
 </style>
