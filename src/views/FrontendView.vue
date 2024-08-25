@@ -5,9 +5,8 @@
     <div class="bg-gray">調整中</div>
 
     <p>
-      当サイト(リポジトリ：<a href="https://github.com/mandshurica831/portfolio">https://github.com/mandshurica831/portfolio</a>)と<br/> 
-      <a
-        href="https://drive.google.com/drive/folders/1PR4SJWhAaD7iK6cE4vf4NW6drBhZ3gVI?usp=drive_link"
+      当サイト(Vue.jsで制作)と<a
+        href="https://drive.google.com/drive/folders/1BHQdPYnT4qvHH-F5n2Kqkv4-fmY3a8zw?usp=drive_link"
         >Google Driveのファイル</a
       >をご覧下さい。
     </p>

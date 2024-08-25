@@ -40,9 +40,11 @@
     z-index: -1;
   }
   &::before {
+    margin-left: -40vw;
     transform: scaleX(200%);
   }
   &::after {
+    margin-right: -40vw;
     transform: scaleX(200%);
   }
 }

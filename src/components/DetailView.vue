@@ -36,7 +36,7 @@ const imgClick = (e: any) => {
         </RouterLink>
       </Transition>
       <Transition name="fade" mode="out-in">
-        <img @click="imgClick" :key="Number(id)" :src="getUrl(`${path}-${Number(id)}.png`)" @load="loadImage" />
+        <img id="detail_image" @click="imgClick" :key="Number(id)" :src="getUrl(`${path}-${Number(id)}.png`)" @load="loadImage" />
       </Transition>
 
       <Transition name="drop" mode="out-in">
@@ -59,6 +59,9 @@ const imgClick = (e: any) => {
 </template>
 
 <style lang="scss" scoped>
+#detail_image{
+  cursor:pointer;
+}
 #DetailView {
   padding-top: 0;
   padding-bottom: 0;
