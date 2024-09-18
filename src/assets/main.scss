@@ -48,6 +48,21 @@
     transform: scaleX(200%);
   }
 }
+
 ul.bg-gray{
   justify-content: flex-start;
+
+  &.text{
+    display: block;
+    width: 300px;
+    margin: auto;
+    text-align: left;
+
+    li{
+      list-style: disc;
+      margin: 1.5em auto;
+    }
+    
+  }
+
 }

@@ -15,8 +15,8 @@
   --ease-header-first: cubic-bezier(0.61, 1, 0.88, 1);
   --ease-default: cubic-bezier(0, 0.55, 0.45, 1);
   --ease-OutCirc: cubic-bezier(0, 0.56, 0.01, 0.98);
-}
 
+}
 *,
 *::before,
 *::after {
@@ -56,6 +56,15 @@ body {
 
 a {
   text-decoration: none;
+  transition: all 200ms;
+  color: var(--color-sub);
+}
+a:hover {
+  color: var(--color-main);
+}
+a:active {
+  color: var(--color-main);
+  text-shadow: 0px 0px 10px var(--color-main);
 }
 
 h1 {
