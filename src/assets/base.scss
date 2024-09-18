@@ -56,15 +56,17 @@ body {
 
 a {
   text-decoration: none;
+}
+ul li > a{
   transition: all 200ms;
   color: var(--color-sub);
-}
-a:hover {
-  color: var(--color-main);
-}
-a:active {
-  color: var(--color-main);
-  text-shadow: 0px 0px 10px var(--color-main);
+  &:hover {
+    color: var(--color-main);
+  }
+  &:active {
+    color: var(--color-main);
+    text-shadow: 0px 0px 10px var(--color-main);
+  }
 }
 
 h1 {

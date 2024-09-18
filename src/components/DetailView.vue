@@ -60,7 +60,7 @@ const imgClick = (e: any) => {
 
 <style lang="scss" scoped>
 #detail_image{
-  cursor:pointer;
+  cursor: zoom-in;
 }
 #DetailView {
   padding-top: 0;

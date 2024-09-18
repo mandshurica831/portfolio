@@ -86,7 +86,7 @@ import Title from './TitleSVG.vue'
   transition: all 300ms var(--ease-default);
   animation: 0.6s 1.2s show-up forwards var(--ease-default);
   &:hover{
-    text-shadow: 2px 2px 0px #ffc65c,-2px 2px 0px #ffc65c,-2px -2px 0px #ffc65c,2px -2px 0px #ffc65c;
+    // text-shadow: 2px 2px 0px #ffc65c,-2px 2px 0px #ffc65c,-2px -2px 0px #ffc65c,2px -2px 0px #ffc65c;
   }
 }
 .short {
